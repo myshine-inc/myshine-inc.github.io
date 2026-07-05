@@ -1,0 +1,18 @@
+﻿@charset "utf-8";
+
+/* 全体共通のフォント設定など */
+body {
+    color: #333333;
+    font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", sans-serif;
+    font-size: 80%;
+    line-height: 1.5em;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+}
+p { margin: 0 0 20px 0; }
+img { border: 0; }
+
+/* 下層ページ用（既存のレイアウト） */
+#contents { width: 800px; margin: 0 auto; overflow: hidden; }
+#main { width: 570px; float: left; }
+#sub { width: 200px; float: right; }

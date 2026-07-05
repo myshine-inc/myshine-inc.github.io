@@ -1,0 +1,358 @@
+﻿@charset "utf-8";
+
+/* 基本レイアウト ここから↓ */
+@import url('https://fonts.googleapis.com/css2?family=Honoka+Mincho&display=swap');
+header {
+	width: 700px;
+	height: 70px;
+	margin: 20px auto 40px auto;
+}
+
+header h1 {
+	margin : 0;
+}
+
+#nav {
+    display: flex;
+    flex-direction: column;
+}
+#nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#nav li {
+    margin-bottom: 20px;
+}
+
+#nav a {
+    transition: color 0.3s ease;
+    color: #254d86;
+    text-decoration: none;
+
+}
+#nav a:hover {
+    color: #3594cc; /* リンク色を変える */
+    padding-left: 10px;
+}
+
+/* サイドバー設定　*/
+.top-page {
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+}
+.top-page #sidebar {
+    width: 160px;
+    height: 100vh; /* 画面いっぱいの高さにする */
+    background-color: #ffffff;
+    padding: 50px 30px;
+    flex-shrink: 0;
+    flex-direction: column;
+    position: sticky;
+    float: none;
+    gap: 50px;
+    display: flex;
+    top: 0;
+    overflow-y: auto;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: inline-block;         /* 横並びを維持する */
+    font-family: 'Honoka Mincho', serif;
+}
+
+/* ロゴ設定 */
+#logo {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+}
+.logo-img {
+    max-width: 70px;
+    height: auto;
+    display: block;
+}
+
+.logo-link {
+    text-decoration: none; 
+    display: inline-block;
+    cursor: pointer; 
+}
+
+.logo-img {
+    border: none;
+    display: block;
+}
+
+a, 
+a:link, 
+a:visited, 
+a:hover, 
+a:active { 
+    color: inherit;
+    text-decoration: none;
+}
+/* 基本レイアウト ここまで↑ */
+
+/* TOPページ ここから↓ */
+body.top-page {
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#main-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#main-visual {
+    flex: 1;
+    background-image: url('../images/top.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#catchcopy {
+    background: linear-gradient(90deg, #254d86, #3594cc);
+    padding: 40px;
+    color: white;
+    width: 560px;
+    max-width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+    margin-bottom: 50px
+}
+
+#catchcopy h1 { margin: 0 0 10px 0; font-size: 2rem;line-height: 1.4; }
+#catchcopy p { margin: 0; font-size: 1.1rem; }
+
+/* ロゴ調整 */
+.logo-img { max-width: 70px; display: block; }
+
+
+/* TOPページ ここまで↑ */
+
+/* 研修内容　ページここから */
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    flex-wrap: wrap; /
+}
+
+.service-item {
+    flex: 1; 
+    overflow: hidden; 
+    background: transparent;
+    text-align: left;
+}
+
+.service-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.service-item h3 {
+    padding: 20px 0 10px 0px;
+    color: #1a2a6c;
+}
+
+.service-item p {
+    padding: 0;
+    color: #555;
+    line-height: 1.6;
+}
+
+.service-vertical-container {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+    max-width: 800px; 
+    margin: 0 auto;
+}
+
+/* 各メニューのアイテム */
+.service-item {
+    width: 100%;
+}
+
+/* 画像のスタイル */
+.service-img-fluid {
+    width: auto;   
+    height: auto;  
+    max-height: 300px; 
+    object-fit: contain; 
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: block; 
+    margin: 0 auto 10px auto;
+}
+
+/* テキストエリア */
+.service-text-area {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.service-text-area h3 {
+    color: #1a2a6c;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.service-text-area p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+/* 研修内容 ページここまで */
+
+/* Company ページ ここから↓ */
+
+/* 上部ナビを横並びに */
+.sub-nav {
+    /* 「固定」 */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 5px 0;
+    background: linear-gradient(90deg, #254d86, #3594cc);
+    background-size: 100% 4px;
+    text-align: center;
+}
+
+.sub-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 100px;
+}
+
+.sub-nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s; 
+}
+
+.sub-nav a:hover {
+    opacity: 0.7;
+}
+
+/* 会社情報ページ専用のメインエリア調整 */
+#company-container {
+    width: 100%; 
+    padding: 0;
+}
+
+/* 各セクションの余白と線 */
+section {
+    padding: 80px 0;
+}
+.line {
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #1a2a6c, #254d86, #b8e0ff);
+    margin: 40px 0;
+}
+
+/* 会社概要 */
+.company-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.company-table th, .company-table td {
+    padding: 30px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.company-table th {
+    width: 30%;
+    color: #1a2a6c;
+    font-weight: bold;
+}
+
+/* 創業者 */
+.founder-image {
+    flex: 0 0 150px;
+    margin: 0 auto;  
+}
+
+.founder-image img {
+    width:  150px; 
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* リードテキストのスタイル */
+.lead-text {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #1a2a6c;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.founder-container {
+    display: flex;
+    flex-direction: row; 
+    gap: 40px;  
+    align-items: flex-start; 
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.founder-text {
+    flex: 1; 
+}
+
+/* Company ページ ここまで↑ */
+
+/* 「ご意見・ご要望」ページ ここから↓ */
+.contact-content {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.contact-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 40px;
+    background: linear-gradient(90deg, #254d86, #3594cc);
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* 「ご意見・ご要望」ページ ここまで↑ */
+
