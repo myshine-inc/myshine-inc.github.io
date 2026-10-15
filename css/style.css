@@ -1,6 +1,8 @@
 ﻿@charset "utf-8";
 
-/* 基本レイアウト ここから↓ */
+/* ========================================
+   基本レイアウト
+======================================== */
 @import url('https://fonts.googleapis.com/css2?family=Honoka+Mincho&display=swap');
 header {
 	width: 700px;
@@ -95,48 +97,378 @@ a:active {
     color: inherit;
     text-decoration: none;
 }
+
+/*  ヘッダー・インデックスメニュー */
+
+.site-header {
+    width: 100%;
+    min-height: 88px;
+    box-sizing: border-box;
+    padding: 12px 4% 0;
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    background: #ffffff;
+    position: relative;
+    z-index: 100;
+    border-bottom: 3px solid #254d86;
+}
+
+/* 左上の舞進ロゴ */
+.site-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.site-logo img {
+    display: block;
+    width: clamp(75px, 10vw, 100px);
+    max-width: 100%;
+    height: auto;
+}
+
+.logo-subtitle {
+    display: block;
+    font-size: 8px;
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #254d86;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* 横型インデックス */
+.index-nav {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 1px;
+}
+
+/* インデックスの基本デザイン */
+.index-tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 18px;
+    box-sizing: border-box;
+
+    color: #254d86;
+    background: #ffffff;
+    border: 1px solid #254d86;
+    border-bottom: 0px solid #1b3965;
+    border-radius: 8px 8px 0 0;
+
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+
+    transition: background-color 0.2s ease;
+}
+
+/* 選択中のページ */
+.index-tab.active {
+    color: #ffffff;
+    background: #254d86;
+    border-color: #254d86;
+    border-bottom-color: #ffffff;
+    font-weight: bold;
+}
+
+/* マウスを乗せたとき */
+.index-tab:hover {
+    color: #ffffff;
+    background: #90cdef;
+    border-color: #90cdef;
+    transform: translateY(-3px);
+}
+
+/* 現在開いているページ */
+.index-tab.active {
+    background: #254d86;
+    border-color: #254d86;
+    border-bottom-color: #254d86;
+    font-weight: bold;
+}
+
+
+/* スマートフォン */
+@media screen and (max-width: 600px) {
+    .site-header {
+        min-height: auto;
+        padding: 12px 4%;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        border-bottom: 3px solid #254d86;
+    }
+
+    .site-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        line-height: 1;
+    }
+
+    .index-nav {
+        width: 100%;
+        gap: 0;
+        justify-content: space-between;
+    }
+
+    .index-tab {
+        flex: 1;
+        min-width: 0;
+        min-height: 38px;
+        padding: 8px 4px;
+        font-size: 12px;
+        white-space: normal;
+        text-align: center;
+    }
+}
+
+
 /* 基本レイアウト ここまで↑ */
 
-/* TOPページ ここから↓ */
+
+/* ========================================
+   TOP画面
+======================================== */
+
+/* PC：サイドバーとメイン画像を横並びに */
 body.top-page {
-    display: flex;
+    display: block;
     min-height: 100vh;
     margin: 0;
 }
 
-#main-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+#main-visual {
+    min-height: 70vh;
+    width: 100%;
+    box-sizing: border-box;
 }
 
+.top-page #sidebar {
+    width: 220px;
+    min-height: 100vh;
+    padding: 40px 24px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+    flex-shrink: 0;
+}
+
+.logo-link {
+    display: inline-block;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-text {
+    font-family: 'Honoka Mincho', serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.logo-img {
+    display: block;
+    width: 70px;
+    height: auto;
+}
+
+#nav {
+    width: 100%;
+}
+
+#nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav li {
+    margin-bottom: 24px;
+}
+
+#nav a {
+    color: #254d86;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#nav a:hover {
+    color: #3594cc;
+}
+
+/* メイン画像 */
 #main-visual {
     flex: 1;
+    min-width: 0;
+    min-height: 100vh;
     background-image: url('../images/top.png');
     background-size: cover;
     background-position: center;
     display: flex;
-    flex-direction: column;
+    align-items: flex-start;
     justify-content: flex-end;
-}
-
-#catchcopy {
-    background: linear-gradient(90deg, #254d86, #3594cc);
+    flex-direction: column;
     padding: 40px;
-    color: white;
-    width: 560px;
-    max-width: 100%;
-    box-sizing: border-box;
-    text-align: left;
-    margin-bottom: 50px
 }
 
-#catchcopy h1 { margin: 0 0 10px 0; font-size: 2rem;line-height: 1.4; }
-#catchcopy p { margin: 0; font-size: 1.1rem; }
+/* キャッチコピー */
+#catchcopy {
+    width: min(560px, 100%);
+    padding: clamp(24px, 3vw, 40px);
+    margin: 0 0 10px;
+    background: linear-gradient(90deg, #254d86, #3594cc);
+    color: #fff;
+    text-align: left;
+}
 
-/* ロゴ調整 */
-.logo-img { max-width: 70px; display: block; }
+#catchcopy h1 {
+    margin: 0 0 16px;
+    font-size: clamp(1.5rem, 2.5vw, 2.4rem);
+    line-height: 1.7;
+    font-weight: bold;
+}
 
+#catchcopy p {
+    margin: 0;
+    font-size: clamp(0.8rem, 1.1vw, 1.05rem);
+    line-height: 1.8;
+}
+
+/* タブレット */
+@media (max-width: 1024px) {
+    .top-page #sidebar {
+        width: 190px;
+        padding: 32px 18px;
+        gap: 36px;
+    }
+
+    .logo-img {
+        width: 58px;
+    }
+
+    .logo-text {
+        font-size: 1rem;
+    }
+
+    #main-visual {
+        padding: 28px;
+    }
+}
+
+/* スマートフォン */
+@media (max-width: 768px) {
+    body.top-page {
+        flex-direction: column;
+    }
+
+    .top-page #sidebar {
+        width: 100%;
+        min-height: auto;
+        padding: 16px;
+        gap: 16px;
+        align-items: center;
+    }
+
+    #logo {
+        justify-content: center;
+    }
+
+    .logo-img {
+        width: 58px;
+    }
+
+    #nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 20px;
+    }
+
+    #nav li {
+        margin: 0;
+    }
+
+    #nav a {
+        font-size: 0.88rem;
+    }
+
+    #main-visual {
+        width: 100%;
+        min-height: 70vh;
+        min-height: 70svh;
+        padding: 16px;
+        background-position: center;
+    }
+
+    #catchcopy {
+        width: 100%;
+        max-width: 560px;
+        padding: 24px 20px;
+        margin: 0;
+    }
+
+    #catchcopy h1 {
+        font-size: clamp(1.25rem, 5vw, 1.9rem);
+        line-height: 1.7;
+    }
+
+    #catchcopy p {
+        font-size: 0.8rem;
+    }
+}
+
+/* 小型スマートフォン */
+@media (max-width: 400px) {
+    .top-page #sidebar {
+        padding: 14px 10px;
+    }
+
+    #nav ul {
+        gap: 12px 14px;
+    }
+
+    #nav a {
+        font-size: 0.82rem;
+    }
+
+    #main-visual {
+        padding: 12px;
+    }
+
+    #catchcopy {
+        padding: 20px 16px;
+    }
+
+    #catchcopy h1 {
+        font-size: 1.25rem;
+    }
+
+    #catchcopy p {
+        font-size: 0.73rem;
+    }
+}
 
 /* TOPページ ここまで↑ */
 
