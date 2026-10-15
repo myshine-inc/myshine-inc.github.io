@@ -4,15 +4,6 @@
    基本レイアウト
 ======================================== */
 @import url('https://fonts.googleapis.com/css2?family=Honoka+Mincho&display=swap');
-header {
-	width: 700px;
-	height: 70px;
-	margin: 20px auto 40px auto;
-}
-
-header h1 {
-	margin : 0;
-}
 
 #nav {
     display: flex;
