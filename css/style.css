@@ -1,6 +1,66 @@
 ﻿@charset "utf-8";
 
 /* ========================================
+   オープニング
+======================================== */
+
+/* ==========================
+   舞進 オープニングアニメーション
+========================== */
+#intro-animation {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    animation: introFadeOut 1.2s ease 3s forwards;
+}
+
+/* ロゴ画像 */
+#intro-animation img {
+    width: clamp(160px, 30vw, 300px);
+    height: auto;
+    opacity: 0;
+    animation: logoDrop 1.4s ease-out 0.2s forwards;
+}
+
+
+/* ロゴが上から降りてくる */
+@keyframes logoDrop {
+    0% {
+        opacity: 1;
+        transform: translateY(-180px);
+    }
+
+    65% {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 50;
+        transform: translateY(0);
+    }
+}
+
+/* TOP画面に切り替わる */
+@keyframes introFadeOut {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+
+
+/* ========================================
    基本レイアウト
 ======================================== */
 @import url('https://fonts.googleapis.com/css2?family=Honoka+Mincho&display=swap');
@@ -95,10 +155,10 @@ a:active {
     width: 100%;
     min-height: 88px;
     box-sizing: border-box;
-    padding: 12px 4% 0;
+    padding: 0 4% 0;
     margin: 0;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
     gap: 24px;
     background: #ffffff;
@@ -140,7 +200,9 @@ a:active {
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    gap: 1px;
+    gap: 0;
+    align-self: flex-end;
+    margin-top: 0;
 }
 
 /* インデックスの基本デザイン */
@@ -236,7 +298,7 @@ a:active {
    TOP画面
 ======================================== */
 
-/* PC：サイドバーとメイン画像を横並びに */
+/* PC：インデックスとメイン画像を横並びに */
 body.top-page {
     display: block;
     min-height: 100vh;
@@ -329,7 +391,7 @@ body.top-page {
     width: min(560px, 100%);
     padding: clamp(24px, 3vw, 40px);
     margin: 0 0 10px;
-    background: linear-gradient(90deg, #254d86, #3594cc);
+    background: linear-gradient(80deg, #254d86, #3594cc);
     color: #fff;
     text-align: left;
 }
