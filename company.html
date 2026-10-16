@@ -110,5 +110,20 @@
 </section>
 </div>
 </main>
+<script>
+    // ロゴをクリックしてTOPに戻った場合はアニメーションをスキップ
+    if (sessionStorage.getItem("skipIntro") === "true") {
+        const intro = document.getElementById("intro-animation");
+        if (intro) {
+            intro.style.display = "none";
+        }
+        sessionStorage.removeItem("skipIntro");
+    }
+
+    // 左上の舞進ロゴをクリックしたら、次のTOP表示でアニメーションをスキップ
+    document.querySelector(".site-logo").addEventListener("click", function () {
+        sessionStorage.setItem("skipIntro", "true");
+    });
+</script>
 </body>
 </html>
