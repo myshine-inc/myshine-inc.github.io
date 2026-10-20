@@ -584,6 +584,42 @@ body.top-page {
     margin: 0 auto 10px auto;
 }
 
+
+/* 画像をタップできるようにする */
+.zoomable-image {
+    cursor: zoom-in;
+}
+
+/* 拡大画像の背景 */
+.image-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* 拡大画像 */
+.image-lightbox img {
+    max-width: 100%;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+/* 拡大中 */
+.image-lightbox.show {
+    display: flex;
+    cursor: zoom-out;
+}
+
+
 /* テキストエリア */
 .service-text-area {
     max-width: 600px;
