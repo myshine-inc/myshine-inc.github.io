@@ -573,17 +573,34 @@ body.top-page {
 }
 
 /* 画像のスタイル */
+```css
+/* 研修画像：PC用 */
 .service-img-fluid {
-    width: auto;   
-    height: auto;  
-    max-height: 300px; 
-    object-fit: contain; 
+    display: block;
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    display: block; 
-    margin: 0 auto 10px auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 auto 20px;
 }
 
+/* スマートフォン用 */
+@media screen and (max-width: 600px) {
+    .service-img-fluid {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto 16px;
+    }
+
+    .service-vertical-container {
+        padding: 24px 16px;
+    }
+}
+```
 
 /* 画像をタップできるようにする */
 .zoomable-image {
