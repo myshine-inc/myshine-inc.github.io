@@ -572,8 +572,6 @@ body.top-page {
     width: 100%;
 }
 
-/* 画像のスタイル */
-```css
 /* 研修画像：PC用 */
 .service-img-fluid {
     display: block;
@@ -600,7 +598,6 @@ body.top-page {
         padding: 24px 16px;
     }
 }
-```
 
 /* 画像をタップできるようにする */
 .zoomable-image {
@@ -768,10 +765,10 @@ section {
 @media screen and (max-width: 600px) {
 
     /* セクション全体の余白を縮める */
-    #main-container section {
-        padding: 32px 18px;
-        box-sizing: border-box;
-    }
+#main-container section {
+    padding: 32px 24px;
+    box-sizing: border-box;
+}
 
     /* 見出し */
     #main-container h2 {
