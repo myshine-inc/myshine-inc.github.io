@@ -764,6 +764,117 @@ section {
     flex: 1; 
 }
 
+/* スマートフォン表示 */
+@media screen and (max-width: 600px) {
+
+    /* セクション全体の余白を縮める */
+    #main-container section {
+        padding: 32px 18px;
+        box-sizing: border-box;
+    }
+
+    /* 見出し */
+    #main-container h2 {
+        font-size: 1.4rem;
+        margin: 16px 0;
+        text-align: center;
+    }
+
+    /* 飾り線 */
+    #main-container .line {
+        height: 3px;
+        margin: 18px 0;
+    }
+
+    /* 本文：文字と行間を読みやすく */
+    #main-container p {
+        font-size: 0.95rem;
+        line-height: 1.9;
+        overflow-wrap: break-word;
+    }
+
+    /* MISSION：文章を左揃えに */
+    #mission p {
+        text-align: left;
+    }
+
+    /* MISSION・COMPANY・FOUNDERのナビ */
+    .sub-nav {
+        padding: 12px 8px;
+    }
+
+    .sub-nav ul {
+        justify-content: space-around;
+        gap: 8px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sub-nav a {
+        font-size: 0.8rem;
+    }
+
+    /* 会社情報：項目名と内容を縦に並べる */
+    .company-table,
+    .company-table tbody,
+    .company-table tr,
+    .company-table th,
+    .company-table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .company-table th {
+        padding: 14px 12px 4px;
+        border-bottom: none;
+        font-size: 0.88rem;
+    }
+
+    .company-table td {
+        padding: 4px 12px 14px;
+        font-size: 0.95rem;
+        overflow-wrap: anywhere;
+    }
+
+    /* 創業者プロフィール：写真を上、文章を下に */
+    .founder-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 16px 0;
+    }
+
+    .founder-image {
+        width: 100%;
+        text-align: center;
+    }
+
+    .founder-image img {
+        width: min(180px, 60%);
+        height: auto;
+    }
+
+    .founder-text {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* キャッチコピー */
+    .lead-text {
+        font-size: 1.2rem;
+        line-height: 1.7;
+        text-align: center;
+        padding: 14px 10px;
+        overflow-wrap: anywhere;
+    }
+
+    /* 代表者名 */
+    .founder-signature {
+        text-align: right;
+    }
+}
+
 /* Company ページ ここまで↑ */
 
 /* 「ご意見・ご要望」ページ ここから↓ */
