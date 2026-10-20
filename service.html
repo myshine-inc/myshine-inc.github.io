@@ -59,5 +59,27 @@
         sessionStorage.setItem("skipIntro", "true");
     });
 </script>
+    <div class="image-lightbox" id="image-lightbox">
+    <img src="" alt="">
+</div>
+
+<script>
+    const zoomImages = document.querySelectorAll(".zoomable-image");
+    const lightbox = document.getElementById("image-lightbox");
+    const lightboxImage = lightbox.querySelector("img");
+
+    zoomImages.forEach(function (image) {
+        image.addEventListener("click", function () {
+            lightboxImage.src = image.src;
+            lightboxImage.alt = image.alt;
+            lightbox.classList.add("show");
+        });
+    });
+
+    lightbox.addEventListener("click", function () {
+        lightbox.classList.remove("show");
+        lightboxImage.src = "";
+    });
+</script>
 </body>
 </html>
