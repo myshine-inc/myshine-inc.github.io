@@ -262,6 +262,7 @@ a:active {
 
  .site-logo {
         flex-direction: row;
+        transform: translateY(10px);
     }
 
     .site-logo .site-logo-mark {
