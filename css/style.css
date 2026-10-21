@@ -172,7 +172,7 @@ a:active {
     flex-shrink: 0;
     line-height: 1;
     text-decoration: none;
-    transform: translateY(10px);
+    transform: translateY(15px);
 }
 
 /* ロゴマーク */
@@ -262,7 +262,7 @@ a:active {
 
  .site-logo {
         flex-direction: row;
-        transform: translateY(10px);
+        transform: translateY(15px);
     }
 
     .site-logo .site-logo-mark {
