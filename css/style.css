@@ -168,7 +168,7 @@ a:active {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 4px;
     flex-shrink: 0;
     line-height: 1;
     text-decoration: none;
@@ -177,14 +177,14 @@ a:active {
 /* ロゴマーク */
 .site-logo .site-logo-mark {
     display: block;
-    width: 38px;
+    width: 30px;
     height: auto;
 }
 
 /* 舞進の画像 */
 .site-logo .site-logo-main {
     display: block;
-    width: clamp(75px, 10vw, 100px);
+    width: clamp(65px, 9vw, 85px);
     max-width: 100%;
     height: auto;
 }
@@ -264,11 +264,11 @@ a:active {
     }
 
     .site-logo .site-logo-mark {
-        width: 38px;
+        width: 30px;
     }
 
     .site-logo .site-logo-main {
-        width: clamp(75px, 10vw, 100px);
+        width: clamp(65px, 9vw, 85px);
     }
 
     .index-nav {
