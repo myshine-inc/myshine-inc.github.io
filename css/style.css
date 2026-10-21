@@ -189,22 +189,6 @@ a:active {
     height: auto;
 }
 
-/* 旧サブタイトルは非表示 */
-.logo-subtitle {
-    display: none;
-}
-
-.logo-subtitle {
-    display: block;
-    font-size: 8px;
-    font-family: Arial, sans-serif;
-    font-weight: 500;
-    letter-spacing: 1px;
-    color: #254d86;
-    text-align: center;
-    line-height: 1.2;
-}
-
 /* 横型インデックス */
 .index-nav {
     display: flex;
@@ -274,13 +258,17 @@ a:active {
         border-bottom: 3px solid #254d86;
     }
 
-    .site-logo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        line-height: 1;
+
+ .site-logo {
+        flex-direction: row;
+    }
+
+    .site-logo .site-logo-mark {
+        width: 38px;
+    }
+
+    .site-logo .site-logo-main {
+        width: clamp(75px, 10vw, 100px);
     }
 
     .index-nav {
