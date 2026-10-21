@@ -165,18 +165,33 @@ a:active {
 /* 左上の舞進ロゴ */
 .site-logo {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    gap: 8px;
     flex-shrink: 0;
     line-height: 1;
+    text-decoration: none;
 }
 
-.site-logo img {
+/* ロゴマーク */
+.site-logo .site-logo-mark {
+    display: block;
+    width: 38px;
+    height: auto;
+}
+
+/* 舞進の画像 */
+.site-logo .site-logo-main {
     display: block;
     width: clamp(75px, 10vw, 100px);
     max-width: 100%;
     height: auto;
+}
+
+/* 旧サブタイトルは非表示 */
+.logo-subtitle {
+    display: none;
 }
 
 .logo-subtitle {
