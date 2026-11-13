@@ -656,9 +656,10 @@ body.top-page {
 
 /* 研修内容 ページここまで */
 
+
 /* Company ページ ここから↓ */
 
-/* インデックスメニューを横並びに */
+/* インデックスメニュー */
 .sub-nav {
     position: sticky;
     position: -webkit-sticky;
@@ -675,6 +676,8 @@ body.top-page {
     justify-content: center;
     list-style: none;
     gap: 100px;
+    padding: 0;
+    margin: 0;
 }
 
 .sub-nav a {
@@ -682,29 +685,14 @@ body.top-page {
     color: #ffffff;
     font-weight: bold;
     font-size: 1.1rem;
-    transition: color 0.3s; 
+    transition: color 0.3s;
 }
 
 .sub-nav a:hover {
     opacity: 0.7;
 }
 
-/* FOUNDERの見出しと区切り線 */
-#founder > h2 {
-    text-align: left;
-    padding-left: 40px;
-    box-sizing: border-box;
-}
-
-#founder > .line {
-    width: 100%;
-}
-
-/* FOUNDERの本文は元の配置に戻す */
-#founder .founder-container {
-    text-align: left;
-}
-/* メニューの親要素で固定を妨げない */
+/* メニューの固定を妨げない */
 #main-container,
 .content-area {
     overflow: visible;
@@ -717,21 +705,38 @@ body.top-page {
     scroll-margin-top: 65px;
 }
 
-/* 会社情報ページ専用のメインエリア調整 */
+/* メインエリア */
 #company-container {
-    width: 100%; 
+    width: 100%;
     padding: 0;
 }
 
-/* 各セクションの余白と線 */
-section {
-    padding: 80px 0;
+/* セクション */
+#main-container section {
+    padding: 80px 40px;
+    box-sizing: border-box;
 }
+
+#main-container h2 {
+    text-align: left;
+}
+
 .line {
     width: 100%;
     height: 4px;
     background: linear-gradient(90deg, #1a2a6c, #254d86, #b8e0ff);
     margin: 40px 0;
+}
+
+/* MISSION・COMPANY本文 */
+#mission p,
+#company .company-table {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#mission p {
+    text-align: left;
 }
 
 /* 会社概要 */
@@ -741,7 +746,8 @@ section {
     margin-top: 20px;
 }
 
-.company-table th, .company-table td {
+.company-table th,
+.company-table td {
     padding: 30px;
     border-bottom: 1px solid #ddd;
     text-align: left;
@@ -753,20 +759,33 @@ section {
     font-weight: bold;
 }
 
-/* 代表 */
+/* FOUNDER */
+.founder-container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: flex-start;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
 .founder-image {
     flex: 0 0 150px;
-    margin: 0 auto;  
+    margin: 0;
 }
 
 .founder-image img {
-    width:  150px; 
+    width: 150px;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* リードテキストのスタイル */
+.founder-text {
+    flex: 1;
+}
+
 .lead-text {
     font-size: 1.6rem;
     font-weight: bold;
@@ -777,75 +796,31 @@ section {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
-.founder-container {
-    display: flex;
-    flex-direction: row; 
-    gap: 40px;  
-    align-items: flex-start; 
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 0;
-}
-
-.founder-text {
-    flex: 1; 
-}
-
 /* スマートフォン表示 */
 @media screen and (max-width: 600px) {
- /* MISSION・COMPANY */
-    #mission,
-    #company {
-        padding-left: 24px;
-        padding-right: 24px;
-    }
- /* FOUNDERの見出しと線 */
-    #founder > h2,
-    #founder > .line {
-        margin-left: 12px;
-        width: calc(100% - 24px);
+
+    #main-container section {
+        padding: 32px 24px;
     }
 
-}
-
-/* 本文と表の横幅 */
-#mission p,
-#company .company-table {
-    width: 100%;
-    box-sizing: border-box;
-}
-    /* セクション全体の余白を縮める */
-#main-container section {
-    padding: 32px 24px;
-    box-sizing: border-box;
-}
-
-    /* 見出し */
     #main-container h2 {
         font-size: 1.4rem;
         margin: 16px 0;
-        text-align: center;
+        text-align: left;
     }
 
-    /* 飾り線 */
     #main-container .line {
         height: 3px;
         margin: 18px 0;
     }
 
-    /* 本文：文字と行間を読みやすく */
     #main-container p {
         font-size: 0.95rem;
         line-height: 1.9;
         overflow-wrap: break-word;
     }
 
-    /* MISSION：文章を左揃えに */
-    #mission p {
-        text-align: left;
-    }
-
-    /* MISSION・COMPANY・FOUNDERのナビ */
+    /* ナビ */
     .sub-nav {
         padding: 12px 8px;
     }
@@ -853,23 +828,13 @@ section {
     .sub-nav ul {
         justify-content: space-around;
         gap: 8px;
-        padding: 0;
-        margin: 0;
     }
 
     .sub-nav a {
         font-size: 0.8rem;
     }
 
-   /* MISSION・COMPANYの余白調整 */
-#mission,
-#company {
-    padding-left: 1em;
-    padding-right: 1em;
-    box-sizing: border-box;
-}
-
-    /* 会社情報：項目名と内容を縦に並べる */
+    /* 会社概要 */
     .company-table,
     .company-table tbody,
     .company-table tr,
@@ -892,10 +857,10 @@ section {
         overflow-wrap: anywhere;
     }
 
-    /* 創業者プロフィール：写真を上、文章を下に */
+    /* FOUNDER */
     .founder-container {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         gap: 20px;
         padding: 16px 0;
     }
@@ -913,24 +878,25 @@ section {
     .founder-text {
         width: 100%;
         min-width: 0;
+        text-align: left;
     }
 
     /* キャッチコピー */
     .lead-text {
         font-size: 1.2rem;
         line-height: 1.7;
-        text-align: center;
-        padding: 14px 10px;
+        text-align: left;
+        padding: 14px 0;
         overflow-wrap: anywhere;
     }
 
-    /* 代表者名 */
     .founder-signature {
         text-align: right;
     }
 }
 
 /* Company ページ ここまで↑ */
+
 
 /* 「ご意見・ご要望」ページ ここから↓ */
 .contact-content {
