@@ -689,11 +689,20 @@ body.top-page {
     opacity: 0.7;
 }
 
-/* FOUNDERの見出し・飾り線 */
-#founder > h2,
+/* FOUNDERの見出しと区切り線 */
+#founder > h2 {
+    text-align: left;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+
 #founder > .line {
-    margin-left: 40px;
-    width: calc(100% - 80px);
+    width: 100%;
+}
+
+/* FOUNDERの本文は元の配置に戻す */
+#founder .founder-container {
+    text-align: left;
 }
 /* メニューの親要素で固定を妨げない */
 #main-container,
