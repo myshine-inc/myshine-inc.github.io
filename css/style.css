@@ -813,6 +813,14 @@ section {
         font-size: 0.8rem;
     }
 
+   /* MISSION・COMPANYの余白調整 */
+#mission,
+#company {
+    padding-left: 1em;
+    padding-right: 1em;
+    box-sizing: border-box;
+}
+
     /* 会社情報：項目名と内容を縦に並べる */
     .company-table,
     .company-table tbody,
